@@ -15,8 +15,13 @@ zuul:
     hello:
       path: /hello/**
       url: http://localhost:9000/
+  retryable: true
           
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8000/eureka/   ## 注册中心eurka地址
+      
+ribbon:
+  MaxAutoRetries: 2
+  MaxAutoRetriesNextServer: 0
